@@ -1,0 +1,10 @@
+Notes
+=====
+
+* Opencv is installed separately on the system, and then linked to.
+    e.g. 
+
+    $ cd venv/local/lib/python2.7/site-packages
+    $ ln -s /usr/lib/dist-packages/cv2.x86-64-gnu.so
+
+* Add fontanalysis package to python path

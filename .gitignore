@@ -1,0 +1,8 @@
+*.pyc
+venv
+fontanalysis/db/main.db
+fontanalysis/db/fontdepot/*
+fontanalysis/db/test/source/*
+*.log
+
+
