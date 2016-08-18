@@ -1,3 +1,9 @@
+=====================================================================
+!!! Warning: THERE IS NO GURANTEE THAT THE SCHEMA IS ACCURATE. REFER 
+             TO ACTUAL MODEL DEFINITIONS IN DB PACKAGE. THIS IS 
+             MEANT TO BE A ROUGH AID FOR THE DEVELOPER.
+=====================================================================
+
 font 
 
     - name
