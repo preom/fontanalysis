@@ -6,7 +6,8 @@ class Font(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    fname = Column(String)
+    ext = Column(String)
+    src = Column(String)
 
     def __repr__(self):
-        return "id: {}, name: {}, fname: {}".format(self.id, self.name, self.fname)
+        return "id: {}, name: {}".format(self.id, self.name)
