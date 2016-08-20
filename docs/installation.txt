@@ -8,3 +8,7 @@ Notes
     $ ln -s /usr/lib/dist-packages/cv2.x86-64-gnu.so
 
 * Add fontanalysis package to python path
+
+* Requires pillow, which can be difficult to install since it requires 
+  libz and jpeg8... Sidenote: Installation somehow magically worked after 
+  restarting computer.

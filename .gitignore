@@ -2,7 +2,8 @@
 *.swp
 venv
 fontanalysis/db/main.db
-fontanalysis/db/fontdepot/*
+fontanalysis/db/depot/*
+!*README*
 fontanalysis/db/test/source/*
 *.log
 

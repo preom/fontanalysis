@@ -1,11 +1,12 @@
 import argparse
 import logging
 
-from dbsettings import Session
+from dbsettings import Session, fntDepotPth, mainDbDirPth
 from font import Font
 
 import os
 import shutil
+import pdb
 
 def add_font_db(fpath):
     fext = os.path.splitext(fpath)[1] # file extension
@@ -21,7 +22,7 @@ def add_font_db(fpath):
     fname = str(fontRow.id) + fext
 
     try: 
-        shutil.copy(fpath, os.path.join('fontdepot', fname))
+        shutil.copy(fpath, os.path.join(fntDepotPath, fname))
     except:
         logging.error('error, could not copy file {}'.format(fpath))
         successFlag = False
@@ -35,10 +36,15 @@ def isfontfile(fpath):
     valid_extensions = ['.ttf', '.otf']
     return os.path.splitext(fpath)[1] in valid_extensions
 
+def fontpath(id):
+    session = Session()
+    q = session.query(Font).filter(Font.id==id).first()
+    return os.path.join(fntDepotPth, str(q.id) + q.ext)
+
 def main():
 
     oldpath = os.getcwd()
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    os.chdir(mainDbDirPth)
 
     logging.basicConfig(filename='logs/fontmanager.log', level=logging.INFO)
 
