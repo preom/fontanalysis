@@ -19,7 +19,7 @@ def gen_letter_img(char, ffpath):
     """
     
     try:
-        font = ImageFont.truetype(ffpath, size=50)
+        font = ImageFont.truetype(ffpath, size=100)
     except:
         logging.warning("Could not load font {}: {}".format(
             ffpath, sys.exc_info()[0]))
@@ -31,11 +31,16 @@ def gen_letter_img(char, ffpath):
 
     return img
 
-def imgpath(fontid, char):
+def imgpath(fontid, char, absPath=False):
     imgExt = '.png'
     fontid = str(fontid)
-    return os.path.join(imgDepotPth, fontid, char + imgExt)
 
+    result = os.path.join(imgDepotPth, fontid, char + imgExt)
+
+    if absPath:
+        result = (os.path.join(mainDbDirPth, result))
+
+    return result
 
 def main():
     logging_lvl = logging.INFO

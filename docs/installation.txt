@@ -12,3 +12,8 @@ Notes
 * Requires pillow, which can be difficult to install since it requires 
   libz and jpeg8... Sidenote: Installation somehow magically worked after 
   restarting computer.
+
+* It may be neccesary to install dependencies that contain proprietary 
+  material (e.g. the SURF library) independently from the ubuntu package for
+  opencv. A possible solution is to install dev libraries from a third party
+  repository, and then reinstall python-opencv.
